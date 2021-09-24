@@ -14,8 +14,12 @@ search.onkeyup = function () {
   searchResults.innerHTML = ``;
 
   let filteredArray = filteringAnArray(data, search.value);
-  console.log(typeof search.value);
-  console.log(typeof filteredArray);
+
+  if (filteredArray.length === 0) {
+    console.log("I ran");
+    searchResults.innerHTML = "THIS IS EMPTY";
+    return;
+  }
 
   filteredArray.forEach((element) => {
     loading.innerHTML = ``;
