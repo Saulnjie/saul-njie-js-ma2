@@ -1,6 +1,5 @@
 import { fetchApi } from "./lib/fetchApi.js";
 import { filteringAnArray } from "./lib/filteringArray.js";
-import { renderHTMLToTheDom } from "./lib/oneDisplayHTML.js";
 
 let data = await fetchApi("https://fakestoreapi.com/products/");
 console.log(data);
@@ -16,7 +15,6 @@ search.onkeyup = function () {
   let filteredArray = filteringAnArray(data, search.value);
 
   if (filteredArray.length === 0) {
-    console.log("I ran");
     searchResults.innerHTML = "THIS IS EMPTY";
     return;
   }
